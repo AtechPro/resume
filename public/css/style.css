@@ -1,0 +1,325 @@
+/* ==========================================================================
+   Windows 98 Resume - Retro Stylesheet (powered by 98.css)
+   ========================================================================== */
+
+:root {
+  --win-teal: #008080;
+  --win-gray: #c0c0c0;
+  --win-blue: #000080;
+  --win-taskbar-height: 34px;
+}
+
+* {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+  user-select: none;
+}
+
+body,
+html {
+  width: 100%;
+  height: 100%;
+  overflow: hidden;
+  font-family: 'Pixelated MS Sans Serif', 'MS Sans Serif', 'Tahoma', sans-serif;
+  background-color: var(--win-teal);
+  background-image: url('../images/webwall.jpg');
+  background-size: cover;
+  background-position: center center;
+  background-repeat: no-repeat;
+}
+
+/* Desktop Canvas */
+#desktop {
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: var(--win-taskbar-height);
+  padding: 16px;
+  display: flex;
+  flex-direction: column;
+  flex-wrap: wrap;
+  align-content: flex-start;
+  gap: 16px;
+  overflow: hidden;
+}
+
+/* Desktop Shortcut Icons */
+.desktop-icon {
+  width: 80px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  text-align: center;
+  cursor: pointer;
+  padding: 6px 4px;
+  border: 1px transparent dotted;
+  border-radius: 2px;
+}
+
+.desktop-icon:hover {
+  background-color: rgba(0, 0, 128, 0.2);
+}
+
+.desktop-icon.selected {
+  border-color: #ffffff;
+  background-color: rgba(0, 0, 128, 0.5);
+}
+
+.desktop-icon img,
+.desktop-icon .icon-svg {
+  width: 32px;
+  height: 32px;
+  margin-bottom: 4px;
+  filter: drop-shadow(1px 1px 0px rgba(0, 0, 0, 0.5));
+}
+
+.desktop-icon span {
+  color: #ffffff;
+  font-size: 11px;
+  text-shadow: 1px 1px 1px #000000;
+  word-break: break-word;
+  line-height: 1.2;
+}
+
+/* Draggable Windows */
+.window {
+  position: absolute !important;
+  min-width: 320px;
+  max-width: 90vw;
+  box-shadow: 2px 2px 5px rgba(0, 0, 0, 0.4);
+  display: none;
+}
+
+.window.active {
+  display: flex;
+  flex-direction: column;
+}
+
+.window.minimized {
+  display: none !important;
+}
+
+.window-body {
+  margin: 8px;
+  flex: 1;
+  overflow-y: auto;
+  user-select: text;
+}
+
+.title-bar {
+  cursor: move;
+}
+
+.title-bar-text {
+  display: flex;
+  align-items: center;
+  gap: 6px;
+}
+
+/* Resume Content Custom Layouts */
+.profile-header {
+  display: flex;
+  gap: 16px;
+  align-items: center;
+  margin-bottom: 12px;
+}
+
+.avatar-box {
+  width: 80px;
+  height: 80px;
+  background: #000;
+  border: 2px inset #dfdfdf;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  color: #00ff00;
+  font-family: monospace;
+  font-weight: bold;
+  font-size: 24px;
+}
+
+.tree-view {
+  background: white;
+  padding: 8px;
+  max-height: 250px;
+  overflow-y: auto;
+}
+
+.skill-bar-container {
+  margin-bottom: 8px;
+}
+
+.skill-bar-label {
+  display: flex;
+  justify-content: space-between;
+  font-size: 11px;
+  margin-bottom: 2px;
+}
+
+.skill-progress {
+  height: 14px;
+  background: #c0c0c0;
+  border: 1px inset #dfdfdf;
+  position: relative;
+  overflow: hidden;
+}
+
+.skill-progress-fill {
+  height: 100%;
+  background: #000080;
+}
+
+/* Taskbar & Start Menu */
+#taskbar {
+  position: fixed;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  min-height: var(--win-taskbar-height);
+  height: auto;
+  background: var(--win-gray);
+  border-top: 2px solid #ffffff;
+  display: flex;
+  align-items: center;
+  padding: 2px 4px;
+  z-index: 9999;
+}
+
+#start-button {
+  font-weight: bold;
+  display: flex;
+  align-items: center;
+  gap: 6px;
+  padding: 2px 6px;
+  height: 26px;
+}
+
+#start-button img {
+  width: 16px;
+  height: 16px;
+}
+
+#taskbar-divider {
+  width: 2px;
+  height: 20px;
+  border-left: 1px solid #808080;
+  border-right: 1px solid #ffffff;
+  margin: 0 4px;
+}
+
+#taskbar-items {
+  display: flex;
+  gap: 4px;
+  flex: 1;
+  overflow: hidden;
+}
+
+.taskbar-item {
+  height: 26px;
+  min-width: 120px;
+  max-width: 180px;
+  display: flex;
+  align-items: center;
+  gap: 6px;
+  padding: 2px 6px;
+  font-size: 11px;
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+}
+
+.taskbar-item.focused {
+  font-weight: bold;
+  background: #dfdfdf;
+  border: 2px inset #ffffff;
+}
+
+#system-tray {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  padding: 2px 8px;
+  border: 2px inset #dfdfdf;
+  height: 24px;
+  font-size: 11px;
+  background: var(--win-gray);
+}
+
+/* Start Menu Popup */
+#start-menu {
+  position: fixed;
+  bottom: var(--win-taskbar-height);
+  left: 2px;
+  width: 220px;
+  background: var(--win-gray);
+  border: 2px solid;
+  border-color: #ffffff #808080 #808080 #ffffff;
+  box-shadow: 2px 2px 5px rgba(0, 0, 0, 0.5);
+  display: none;
+  z-index: 10000;
+}
+
+#start-menu.open {
+  display: flex;
+}
+
+.start-sidebar {
+  width: 30px;
+  background: linear-gradient(to top, #000080, #1084d0);
+  writing-mode: vertical-rl;
+  transform: rotate(180deg);
+  color: #ffffff;
+  font-weight: bold;
+  font-size: 16px;
+  padding: 10px 4px;
+  letter-spacing: 2px;
+  text-shadow: 1px 1px 1px #000;
+}
+
+.start-items {
+  flex: 1;
+  display: flex;
+  flex-direction: column;
+  padding: 2px 0;
+}
+
+.start-item {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  padding: 6px 12px;
+  font-size: 11px;
+  cursor: pointer;
+  color: #000000;
+  text-decoration: none;
+}
+
+.start-item:hover {
+  background: #000080;
+  color: #ffffff;
+}
+
+.start-divider {
+  height: 1px;
+  border-top: 1px solid #808080;
+  border-bottom: 1px solid #ffffff;
+  margin: 4px 2px;
+}
+
+/* Status Bar */
+.status-bar {
+  margin: 0 8px 8px 8px;
+}
+
+/* Terminal / CMD Cursor Blink */
+.cmd-blink {
+  animation: blink-animation 1s step-end infinite;
+}
+
+@keyframes blink-animation {
+  50% {
+    opacity: 0;
+  }
+}

@@ -1,0 +1,527 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>IllyaAtech - Windows 98 Interactive Resume</title>
+  <meta name="description"
+    content="Interactive Windows 98-themed Resume & Portfolio of Amirul Qayyum (IllyaAtech) - DevOps, Cloud & Network Infrastructure Engineer.">
+  <meta name="author" content="Amirul Qayyum (IllyaAtech)">
+
+  <!-- Open Graph / Social Media Meta Tags -->
+  <meta property="og:title" content="IllyaAtech - Windows 98 Interactive Resume">
+  <meta property="og:description"
+    content="DevOps & Network Infrastructure Specialist Interactive Portfolio built in retro Windows 98 style.">
+  <meta property="og:type" content="website">
+
+  <!-- Favicon / Retro Certificate Icon -->
+  <link rel="icon" type="image/svg+xml" href="images/cert.svg">
+  <!-- Self-hosted 98.css Framework -->
+  <link rel="stylesheet" href="css/98.css">
+  <link rel="stylesheet" href="css/style.css">
+</head>
+
+<body>
+
+  <!-- Desktop Icons Canvas -->
+  <main id="desktop">
+    <div class="desktop-icon" onclick="openWindow('window-about')" ondblclick="openWindow('window-about')">
+      <img class="icon-svg" src="https://win98icons.alexmeub.com/icons/png/notepad_file-1.png" alt="About Me">
+      <span>About Me.txt</span>
+    </div>
+
+    <div class="desktop-icon" onclick="openWindow('window-experience')" ondblclick="openWindow('window-experience')">
+      <img class="icon-svg" src="https://win98icons.alexmeub.com/icons/png/console_prompt-0.png" alt="Experience">
+      <span>Experience.exe</span>
+    </div>
+
+    <div class="desktop-icon" onclick="openWindow('window-skills')" ondblclick="openWindow('window-skills')">
+      <img class="icon-svg" src="https://win98icons.alexmeub.com/icons/png/gears-0.png" alt="Skills">
+      <span>Skills_&_Certs.dll</span>
+    </div>
+
+    <div class="desktop-icon" onclick="openWindow('window-projects')" ondblclick="openWindow('window-projects')">
+      <img class="icon-svg" src="https://win98icons.alexmeub.com/icons/png/directory_closed-4.png" alt="Projects">
+      <span>Projects.folder</span>
+    </div>
+
+    <div class="desktop-icon" onclick="openWindow('window-readme')" ondblclick="openWindow('window-readme')">
+      <img class="icon-svg" src="https://win98icons.alexmeub.com/icons/png/notepad-0.png" alt="README">
+      <span>README.md</span>
+    </div>
+
+    <div class="desktop-icon" onclick="openWindow('window-chha')" ondblclick="openWindow('window-chha')">
+      <img class="icon-svg" src="https://win98icons.alexmeub.com/icons/png/paint_file-2.png" alt="Chha Project">
+      <span>Chha_Project.bmp</span>
+    </div>
+
+    <div class="desktop-icon" onclick="openWindow('window-recycle')" ondblclick="openWindow('window-recycle')">
+      <img class="icon-svg" src="https://win98icons.alexmeub.com/icons/png/recycle_bin_empty-4.png" alt="Recycle Bin">
+      <span>Recycle Bin</span>
+    </div>
+  </main>
+
+  <!-- ================= WINDOW 1: ABOUT ME ================= -->
+  <div id="window-about" class="window" style="top: 25px; left: 110px; width: 440px; z-index: 10;">
+    <div class="title-bar" onmousedown="focusWindow('window-about')">
+      <div class="title-bar-text">
+        <img src="https://win98icons.alexmeub.com/icons/png/notepad_file-1.png" alt="About" width="16" height="16"
+          style="vertical-align: middle; margin-right: 4px; margin-top: -2px;"><span>About Me.txt - Notepad</span>
+      </div>
+      <div class="title-bar-controls">
+        <button aria-label="Minimize" onclick="minimizeWindow('window-about')"></button>
+        <button aria-label="Maximize" disabled></button>
+        <button aria-label="Close" onclick="closeWindow('window-about')"></button>
+      </div>
+    </div>
+    <div class="window-body">
+      <div class="profile-header">
+        <div class="avatar-box">IA</div>
+        <div>
+          <h3 style="margin-bottom: 2px;">Amirul Qayyum Sikambar</h3>
+          <p><strong>DevOps / Network Infrastructure & Backend</strong></p>
+          <p style="font-size: 11px; color: #555;">
+            <img src="https://win98icons.alexmeub.com/icons/png/message_envelope_open-0.png" width="12" height="12"
+              style="vertical-align: middle;"> <a href="mailto:mirulqayyum@outlook.com">mirulqayyum@outlook.com</a> |
+            <img src="https://win98icons.alexmeub.com/icons/png/world-0.png" width="12" height="12"
+              style="vertical-align: middle;"> <a href="https://github.com/AtechPro" target="_blank"
+              rel="noopener noreferrer">Github:
+              AtechPro</a> | <img src="https://win98icons.alexmeub.com/icons/png/telephony-0.png" width="12" height="12"
+              style="vertical-align: middle;"> 01170745731
+          </p>
+        </div>
+      </div>
+      <fieldset>
+        <legend>Executive Summary</legend>
+        <p style="margin-bottom: 8px; line-height: 1.4; font-size: 12px;">
+          Network Engineering graduate and AWS Certified Cloud Practitioner with hands-on experience in Linux system
+          administration, Docker containerization, and virtualization architectures (Proxmox VE).
+        </p>
+        <p style="margin-bottom: 8px; line-height: 1.4; font-size: 12px;">
+          Proven track record of automating operational workflows, managing distributed hybrid infrastructure, and
+          configuring secure network routing (HCIA Datacom, Tailscale, Cloudflare Tunnels).
+        </p>
+        <p style="line-height: 1.4; font-size: 12px;">
+          Strong background in infrastructure troubleshooting and system monitoring, looking to leverage a robust
+          foundation in networking and container deployment as a DevOps & Backend Engineer.
+        </p>
+      </fieldset>
+      <fieldset style="margin-top: 8px;">
+        <legend>My Philosophy™ & Life Rules</legend>
+        <div style="font-size: 11px; font-style: italic; line-height: 1.4;">
+          <p style="margin-bottom: 4px;">"Simple & Easy, but Special Edition. (SE but SE) Sufficient & Efficient, but
+            with Superior Execution."</p>
+          <p style="margin-bottom: 4px;">"Collect, Reallocate, Recovery, Review, Revise/Reconsider (C4Re Formation)"</p>
+          <p>"Every feature merged on GitHub carries a cost: increased complexity, potential for bugs... Everything
+            Always Comes with a cost, Despite being free."</p>
+        </div>
+      </fieldset>
+    </div>
+    <div class="status-bar">
+      <p class="status-bar-field">AWS Certified Cloud Practitioner</p>
+      <p class="status-bar-field">HCIA Datacom</p>
+      <p class="status-bar-field">Ready</p>
+    </div>
+  </div>
+
+  <!-- ================= WINDOW 2: WORK EXPERIENCE ================= -->
+  <div id="window-experience" class="window" style="top: 35px; left: calc(100vw - 580px); width: 540px; z-index: 9;">
+    <div class="title-bar" onmousedown="focusWindow('window-experience')">
+      <div class="title-bar-text">
+        <img src="https://win98icons.alexmeub.com/icons/png/console_prompt-0.png" alt="Experience" width="16"
+          height="16" style="vertical-align: middle; margin-right: 4px; margin-top: -2px;"><span>Work
+          Experience.exe</span>
+      </div>
+      <div class="title-bar-controls">
+        <button aria-label="Minimize" onclick="minimizeWindow('window-experience')"></button>
+        <button aria-label="Maximize" disabled></button>
+        <button aria-label="Close" onclick="closeWindow('window-experience')"></button>
+      </div>
+    </div>
+    <div class="window-body"
+      style="background-color: #000; color: #0f0; font-family: 'Courier New', Courier, monospace; padding: 10px; margin: 0; overflow-y: auto; max-height: 400px; font-size: 12px; line-height: 1.4;">
+      <p style="margin-bottom: 12px;">Microsoft(R) Windows 98<br>
+        (C)Copyright Microsoft Corp 1981-1999.</p>
+
+      <p style="margin-bottom: 12px; color: #0f0;">C:\> <span style="color: #0f0;">WORK_EXPERIENCE.EXE</span></p>
+
+      <div style="margin-bottom: 16px;">
+        <p style="color: #0f0; font-weight: bold;">> Field Engineer — I Seen Technology Sdn BHD</p>
+        <p style="color: #0c0; margin-bottom: 4px;"> [April 2026 - May 2026]</p>
+        <div style="margin-left: 12px; border-left: 1px solid #090; padding-left: 10px;">
+          <p style="margin-bottom: 4px;">- Installed and configured AV systems, PCs, and related IT equipment across
+            multiple client sites, while performing troubleshooting and preventive maintenance to replace inconsistent
+            manual support with structured on-site technical service.</p>
+          <p style="margin-bottom: 4px;">- Executed field installations, preventive maintenance, and troubleshooting
+            assignments across diverse locations, producing daily technical reports for completed PM, installation, and
+            issue resolution activities to improve service tracking and operational accountability.</p>
+          <p>- Coordinated directly with site stakeholders and higher-level personnel to negotiate scheduling, manage
+            unpredictable travel demands, and ensure timely task completion across multiple deployment environments.</p>
+        </div>
+      </div>
+
+      <div style="margin-bottom: 16px;">
+        <p style="color: #0f0; font-weight: bold;">> Full Stack Developer Intern — Lenog Plant Service SDN BHD</p>
+        <p style="color: #0c0; margin-bottom: 4px;"> [Mar 2025 - Aug 2025]</p>
+        <div style="margin-left: 12px; border-left: 1px solid #090; padding-left: 10px;">
+          <p style="margin-bottom: 4px;">- Developed and deployed a full-stack Letter Generation System (Flask,
+            JavaScript, Docker, Linux/DigitalOcean) to replace manual Word-based workflows, improving document
+            standardization, reducing processing time, and increasing operational efficiency.</p>
+          <p style="margin-bottom: 4px;">- Built and deployed a mobile-responsive Valve Reporting System (Flask,
+            JavaScript, Docker, Caddy, Linux) to digitize manual field reporting, improving reporting accuracy,
+            accessibility, and field data collection efficiency.</p>
+          <p>- Managed NAS-to-SSD on-premise backup processes to ensure data integrity and business continuity, while
+            researching cloud-based backup solutions to support future scalability and disaster recovery planning.</p>
+        </div>
+      </div>
+
+      <p style="color: #0f0;">C:\> <span class="cmd-blink">_</span></p>
+    </div>
+    <div class="status-bar">
+      <p class="status-bar-field">2 Roles Recorded</p>
+      <p class="status-bar-field">Status: Verified</p>
+    </div>
+  </div>
+
+  <!-- ================= WINDOW 3: SKILLS & CERTIFICATIONS ================= -->
+  <div id="window-skills" class="window" style="top: 340px; left: 120px; width: 460px; z-index: 8;">
+    <div class="title-bar" onmousedown="focusWindow('window-skills')">
+      <div class="title-bar-text">
+        <img src="https://win98icons.alexmeub.com/icons/png/gears-0.png" alt="Skills" width="16" height="16"
+          style="vertical-align: middle; margin-right: 4px; margin-top: -2px;"><span>Skills_&_Certs.dll</span>
+      </div>
+      <div class="title-bar-controls">
+        <button aria-label="Minimize" onclick="minimizeWindow('window-skills')"></button>
+        <button aria-label="Maximize" disabled></button>
+        <button aria-label="Close" onclick="closeWindow('window-skills')"></button>
+      </div>
+    </div>
+    <div class="window-body">
+      <fieldset style="margin-bottom: 12px;">
+        <legend>Technical Competencies & Domains</legend>
+        <div style="font-size: 11px; display: flex; flex-direction: column; gap: 8px;">
+
+          <div>
+            <strong><img src="https://win98icons.alexmeub.com/icons/png/cd_drive-0.png" width="12" height="12"
+                style="vertical-align: middle; margin-right: 4px;">Containers & Virtualization:</strong>
+            <div style="display: flex; flex-wrap: wrap; gap: 4px; margin-top: 4px;">
+              <button style="padding: 2px 6px;">Docker</button>
+              <button style="padding: 2px 6px;">Proxmox VE</button>
+              <button style="padding: 2px 6px;">LXC</button>
+            </div>
+          </div>
+
+          <div>
+            <strong><img src="https://win98icons.alexmeub.com/icons/png/world_network_directories-0.png" width="12"
+                height="12" style="vertical-align: middle; margin-right: 4px;">Networking & Zero Trust:</strong>
+            <div style="display: flex; flex-wrap: wrap; gap: 4px; margin-top: 4px;">
+              <button style="padding: 2px 6px;">Tailscale Mesh VPN</button>
+              <button style="padding: 2px 6px;">Cloudflare Tunnels</button>
+            </div>
+          </div>
+
+          <div>
+            <strong><img src="https://win98icons.alexmeub.com/icons/png/script_file_yellow-0.png" width="12" height="12"
+                style="vertical-align: middle; margin-right: 4px;">Languages & Backend:</strong>
+            <div style="display: flex; flex-wrap: wrap; gap: 4px; margin-top: 4px;">
+              <button style="padding: 2px 6px;">Python (Flask)</button>
+              <button style="padding: 2px 6px;">JavaScript</button>
+              <button style="padding: 2px 6px;">Bash</button>
+              <button style="padding: 2px 6px;">Terraform</button>
+              <button style="padding: 2px 6px;">SQLite</button>
+            </div>
+          </div>
+
+          <div>
+            <strong><img src="https://win98icons.alexmeub.com/icons/png/tools_gear-0.png" width="12" height="12"
+                style="vertical-align: middle; margin-right: 4px;">OS & Hardware:</strong>
+            <div style="display: flex; flex-wrap: wrap; gap: 4px; margin-top: 4px;">
+              <button style="padding: 2px 6px;">Arch / Fedora / Debian / Ubuntu</button>
+              <button style="padding: 2px 6px;">Raspberry Pi</button>
+              <button style="padding: 2px 6px;">Hardware Component Repair</button>
+            </div>
+          </div>
+
+          <div>
+            <strong><img src="https://win98icons.alexmeub.com/icons/png/processor-0.png" width="12" height="12"
+                style="vertical-align: middle; margin-right: 4px;">IoT & Tools:</strong>
+            <div style="display: flex; flex-wrap: wrap; gap: 4px; margin-top: 4px;">
+              <button style="padding: 2px 6px;">MQTT</button>
+              <button style="padding: 2px 6px;">ESP8266</button>
+              <button style="padding: 2px 6px;">Git</button>
+            </div>
+          </div>
+
+        </div>
+      </fieldset>
+
+      <fieldset style="margin-bottom: 12px;">
+        <legend>Official Certifications</legend>
+        <div style="font-size: 12px; line-height: 1.4;">
+          <p><img src="https://win98icons.alexmeub.com/icons/png/certificate-0.png" width="12" height="12"
+              style="vertical-align: middle; margin-right: 4px;"> <strong>Amazon Web Service (AWS) - Cloud
+              Practitioner</strong> (Dec 2025)</p>
+          <p style="font-size: 11px; color: #555; margin-left: 16px; margin-bottom: 6px;">Applied foundational cloud
+            architecture principles to align AWS core services with specific business requirements.</p>
+          <p><img src="https://win98icons.alexmeub.com/icons/png/certificate-0.png" width="12" height="12"
+              style="vertical-align: middle; margin-right: 4px;"> <strong>Huawei Certified ICT Associate (HCIA) -
+              Datacom</strong> (Oct 2023)</p>
+          <p style="font-size: 11px; color: #555; margin-left: 16px;">Expanded multi-vendor networking expertise by
+            applying core Routing and Switching principles.</p>
+        </div>
+      </fieldset>
+
+      <fieldset>
+        <legend>Education Background</legend>
+        <div style="font-size: 12px; line-height: 1.4;">
+          <p><img src="https://win98icons.alexmeub.com/icons/png/book_open-0.png" width="12" height="12"
+              style="vertical-align: middle; margin-right: 4px;"> <strong>Universiti Malaysia Sabah</strong></p>
+          <p style="font-size: 11px; margin-left: 16px;">• Bachelor of Computer Science with Honours (Network
+            Engineering) [Oct 2021 - Nov 2025]</p>
+          <p style="font-size: 11px; margin-left: 16px;">• Foundation in Information and Technology [Aug 2020 - July
+            2021]</p>
+        </div>
+      </fieldset>
+    </div>
+    <div class="status-bar">
+      <p class="status-bar-field">AWS & HCIA Verified</p>
+      <p class="status-bar-field">UMS Network Eng.</p>
+    </div>
+  </div>
+
+  <!-- ================= WINDOW 4: PROJECTS ================= -->
+  <div id="window-projects" class="window" style="top: 140px; left: calc(50vw - 270px); width: 520px; z-index: 7;">
+    <div class="title-bar" onmousedown="focusWindow('window-projects')">
+      <div class="title-bar-text">
+        <img src="https://win98icons.alexmeub.com/icons/png/directory_closed-4.png" alt="Projects" width="16"
+          height="16" style="vertical-align: middle; margin-right: 4px; margin-top: -2px;"><span>Projects.folder</span>
+      </div>
+      <div class="title-bar-controls">
+        <button aria-label="Minimize" onclick="minimizeWindow('window-projects')"></button>
+        <button aria-label="Maximize" disabled></button>
+        <button aria-label="Close" onclick="closeWindow('window-projects')"></button>
+      </div>
+    </div>
+    <div class="window-body">
+      <menu role="tablist">
+        <li role="tab" aria-selected="true"><a href="#tab1" onclick="switchTab(event, 'tab1')">Hybrid Infra & AI Lab</a>
+        </li>
+        <li role="tab"><a href="#tab2" onclick="switchTab(event, 'tab2')">Internal Operation System</a></li>
+        <li role="tab"><a href="#tab3" onclick="switchTab(event, 'tab3')">IoT Home Automation</a></li>
+      </menu>
+      <div class="window" role="tabpanel"
+        style="position: relative !important; display: block; border-top: none; width: 100%;">
+
+        <!-- PROJECT 1 TAB -->
+        <div id="tab1" class="tab-content" style="padding: 8px;">
+          <h4><img src="https://win98icons.alexmeub.com/icons/png/server_window-0.png" width="14" height="14"
+              style="vertical-align: middle; margin-right: 4px;">Docker Homelab</h4>
+          <ul style="font-size: 11px; margin: 6px 0 6px 16px; line-height: 1.4;">
+            <li>Self-hosted services</li>
+            <li>Reverse Proxy using Nginx Proxy Manager</li>
+            <li>Cloudflare Tunnel</li>
+            <li>Tailscale</li>
+          </ul>
+        </div>
+
+        <!-- PROJECT 2 TAB -->
+        <div id="tab2" class="tab-content" style="padding: 8px; display: none;">
+          <h4><img src="https://win98icons.alexmeub.com/icons/png/settings_gear-0.png" width="14" height="14"
+              style="vertical-align: middle; margin-right: 4px;">Homelab Infrastructure</h4>
+          <ul style="font-size: 11px; margin: 6px 0 6px 16px; line-height: 1.4;">
+            <li>Proxmox VE Virtualization</li>
+            <li>Home Assistant</li>
+            <li>Docker & LXC Containers</li>
+            <li>Experimenting with infrastructure routing</li>
+          </ul>
+        </div>
+
+        <!-- PROJECT 3 TAB -->
+        <div id="tab3" class="tab-content" style="padding: 8px; display: none;">
+          <h4><img src="https://win98icons.alexmeub.com/icons/png/processor-0.png" width="14" height="14"
+              style="vertical-align: middle; margin-right: 4px;">AI Integrations</h4>
+          <ul style="font-size: 11px; margin: 6px 0 6px 16px; line-height: 1.4;">
+            <li>Ollama (Local LLM deployments)</li>
+            <li>Openrouter integration</li>
+            <li>n8n workflow testing</li>
+          </ul>
+        </div>
+
+      </div>
+    </div>
+    <div class="status-bar">
+      <p class="status-bar-field">3 Core Projects</p>
+    </div>
+  </div>
+
+  <!-- ================= WINDOW 6: RECYCLE BIN ================= -->
+  <div id="window-recycle" class="window" style="top: 420px; left: calc(50vw - 170px); width: 320px; z-index: 4;">
+    <div class="title-bar" onmousedown="focusWindow('window-recycle')">
+      <div class="title-bar-text">
+        <img src="https://win98icons.alexmeub.com/icons/png/recycle_bin_empty-4.png" alt="Recycle Bin" width="16"
+          height="16" style="vertical-align: middle; margin-right: 4px; margin-top: -2px;"><span>Recycle Bin</span>
+      </div>
+      <div class="title-bar-controls">
+        <button aria-label="Minimize" onclick="minimizeWindow('window-recycle')"></button>
+        <button aria-label="Maximize" disabled></button>
+        <button aria-label="Close" onclick="closeWindow('window-recycle')"></button>
+      </div>
+    </div>
+    <div class="window-body">
+      <p style="font-size: 12px; margin-bottom: 8px;">Items in Recycle Bin:</p>
+      <div class="tree-view">
+        <p style="font-size: 11px;"><img src="https://win98icons.alexmeub.com/icons/png/notepad_file-0.png" width="12"
+            height="12" style="vertical-align: text-bottom; margin-right: 2px;"> Manual_Workflow.md (0 KB)
+        </p>
+        <p style="font-size: 11px;"><img src="https://win98icons.alexmeub.com/icons/png/notepad_file-0.png" width="12"
+            height="12" style="vertical-align: text-bottom; margin-right: 2px;"> ego_centric.log (0 KB)</p>
+      </div>
+    </div>
+    <div class="status-bar">
+      <p class="status-bar-field">2 items (0 bytes)</p>
+    </div>
+  </div>
+
+  <!-- ================= WINDOW 8: README ================= -->
+  <div id="window-readme" class="window" style="top: 60px; left: calc(50vw - 250px); width: 500px; z-index: 15;">
+    <div class="title-bar" onmousedown="focusWindow('window-readme')">
+      <div class="title-bar-text">
+        <img src="https://win98icons.alexmeub.com/icons/png/notepad-0.png" alt="README" width="16" height="16"
+          style="vertical-align: middle; margin-right: 4px; margin-top: -2px;"><span>README.md - Notepad</span>
+      </div>
+      <div class="title-bar-controls">
+        <button aria-label="Minimize" onclick="minimizeWindow('window-readme')"></button>
+        <button aria-label="Maximize" disabled></button>
+        <button aria-label="Close" onclick="closeWindow('window-readme')"></button>
+      </div>
+    </div>
+    <div class="window-body" style="padding: 8px;">
+      <p style="font-weight: bold; font-size: 14px; margin-bottom: 8px;"><img
+          src="https://win98icons.alexmeub.com/icons/png/msg_information-0.png" width="14" height="14"
+          style="vertical-align: middle; margin-right: 4px;">Yokoso Watashi no Portfolio Website</p>
+      <p style="font-weight: bold; font-size: 12px; margin-bottom: 8px;"><img
+          src="https://win98icons.alexmeub.com/icons/png/user_computer_pair-0.png" width="14" height="14"
+          style="vertical-align: middle; margin-right: 4px;">Who This? Sepa Ni?? だれですが？ 是谁呢？🤔</p>
+      <p style="font-size: 12px; margin-bottom: 8px;">My Name is Amirul Qayyum Si Kambar, Some would call me AtechPro,
+        Well i
+        Im a Network Engineer Graduate where I also extend myself into DevOps. </p>
+
+      <fieldset style="margin-bottom: 8px;">
+        <legend>Stuff I Like & Do:</legend>
+        <ul style="font-size: 11px; line-height: 1.5; margin-left: 16px;">
+          <li><img src="https://win98icons.alexmeub.com/icons/png/network_normal_two_pcs-0.png" width="12" height="12"
+              style="vertical-align: middle; margin-right: 4px;"> <strong>Connecting Systems:</strong> Building things that talk to each other (like Hatsune Miku connecting the world 🎵).</li>
+          <li><img src="https://win98icons.alexmeub.com/icons/png/server_to_desktop-0.png" width="12" height="12"
+              style="vertical-align: middle; margin-right: 4px;"> <strong>Cloud & Virtualization:</strong> Tinkering with Docker containers, Proxmox VMs, and homelab setups.</li>
+          <li><img src="https://win98icons.alexmeub.com/icons/png/network_drive_connected-0.png" width="12" height="12"
+              style="vertical-align: middle; margin-right: 4px;"> <strong>Network Tunnels:</strong> Tunneling <code>localhost</code> to the wild web using Cloudflare Tunnels & Tailscale. Big open-source fan!</li>
+          <li><img src="https://win98icons.alexmeub.com/icons/png/script_file_blue-0.png" width="12" height="12"
+              style="vertical-align: middle; margin-right: 4px;"> <strong>Automation & Scripts:</strong> Writing Python & Bash tools so I don't have to do repetitive tasks manually twice.</li>
+          <li><img src="https://win98icons.alexmeub.com/icons/png/computer_explorer-0.png" width="12" height="12"
+              style="vertical-align: middle; margin-right: 4px;"> <strong>Network Architecture:</strong> Genuinely fascinated by routing, packets, and watching nodes handshake seamlessly.</li>
+        </ul>
+      </fieldset>
+
+      <fieldset style="margin-bottom: 8px;">
+        <legend><img src="https://win98icons.alexmeub.com/icons/png/msg_warning-0.png" width="12" height="12"
+            style="vertical-align: middle; margin-right: 4px;"> Kata-Kata Semangat (Pieces of Advice)</legend>
+        <ul style="font-size: 11px; line-height: 1.5; margin-left: 16px; font-style: italic;">
+          <li>Learn deeply, but don't trap yourself in endless preparation. Reality only rewards things that are tested.
+          </li>
+          <li>Use AI as a teacher, not as a replacement for thinking. Keep your own ability to troubleshoot.</li>
+          <li>Everything has a cost. Every feature, tool, and decision has trade-offs.</li>
+          <li>Learn networking, software, and infrastructure together. The strongest solutions connect different
+            systems.</li>
+          <li>Don't compare my timeline with others. Everyone has unique paths.</li>
+          <li>I am not trying to know everything. I am trying to become someone who can learn anything when needed.</li>
+        </ul>
+      </fieldset>
+    </div>
+    <div class="status-bar">
+      <p class="status-bar-field">Ln 1, Col 1</p>
+      <p class="status-bar-field">Encoding: UTF-8</p>
+    </div>
+  </div>
+
+  <!-- ================= WINDOW: CHHA PROJECT PREVIEW ================= -->
+  <div id="window-chha" class="window" style="top: 465px; left: calc(100vw - 580px); width: 540px; z-index: 20;">
+    <div class="title-bar" onmousedown="focusWindow('window-chha')">
+      <div class="title-bar-text">
+        <img src="https://win98icons.alexmeub.com/icons/png/paint_file-2.png" alt="Chha Project" width="16" height="16"
+          style="vertical-align: middle; margin-right: 4px; margin-top: -2px;"><span>Chha_Project.bmp - Imaging
+          Preview</span>
+      </div>
+      <div class="title-bar-controls">
+        <button aria-label="Minimize" onclick="minimizeWindow('window-chha')"></button>
+        <button aria-label="Maximize" disabled></button>
+        <button aria-label="Close" onclick="closeWindow('window-chha')"></button>
+      </div>
+    </div>
+    <div class="window-body" style="padding: 6px;">
+      <div class="sunken-panel"
+        style="background: #808080; padding: 6px; text-align: center; overflow: auto; max-height: 380px;">
+        <img src="images/projectpic.png" alt="Chha Project Architecture"
+          style="max-width: 100%; height: auto; border: 1px solid #000; display: block; margin: 0 auto;">
+      </div>
+      <p style="font-size: 11px; margin-top: 6px; color: #333;"><strong>Centralized Hub Home Automation Schematic
+          Diagram</strong> -
+        1st Module preview</p>
+    </div>
+    <div class="status-bar">
+      <p class="status-bar-field">Image: projectpic.png</p>
+      <p class="status-bar-field">Zoom: 100%</p>
+    </div>
+  </div>
+
+  <!-- ================= TASKBAR & START MENU ================= -->
+  <div id="taskbar">
+    <button id="start-button" onclick="toggleStartMenu()">
+      <img src="https://win98icons.alexmeub.com/icons/png/windows-0.png" alt="Start" width="16" height="16"
+        style="margin-right: 4px;">
+      Start
+    </button>
+    <div id="taskbar-divider"></div>
+    <div id="taskbar-items"></div>
+    <div id="system-tray">
+      <img src="https://win98icons.alexmeub.com/icons/png/loudspeaker_rays-0.png" width="16" height="16" alt="Volume"
+        style="vertical-align: middle; margin-right: 4px; margin-top: -2px;">
+      <span id="clock">12:00 PM</span>
+    </div>
+  </div>
+
+  <!-- Start Menu Dropdown -->
+  <div id="start-menu">
+    <div class="start-sidebar">Windows98</div>
+    <div class="start-items">
+      <a class="start-item" onclick="openWindow('window-about'); toggleStartMenu();"><img
+          src="https://win98icons.alexmeub.com/icons/png/notepad_file-1.png" width="24" height="24"
+          style="margin-right: 8px; vertical-align: middle;">About Me</a>
+      <a class="start-item" onclick="openWindow('window-experience'); toggleStartMenu();"><img
+          src="https://win98icons.alexmeub.com/icons/png/console_prompt-0.png" width="24" height="24"
+          style="margin-right: 8px; vertical-align: middle;">Work Experience</a>
+      <a class="start-item" onclick="openWindow('window-skills'); toggleStartMenu();"><img
+          src="https://win98icons.alexmeub.com/icons/png/gears-0.png" width="24" height="24"
+          style="margin-right: 8px; vertical-align: middle;">Skills & Certs</a>
+      <a class="start-item" onclick="openWindow('window-projects'); toggleStartMenu();"><img
+          src="https://win98icons.alexmeub.com/icons/png/directory_closed-4.png" width="24" height="24"
+          style="margin-right: 8px; vertical-align: middle;">Portfolio Projects</a>
+      <a class="start-item" onclick="openWindow('window-readme'); toggleStartMenu();"><img
+          src="https://win98icons.alexmeub.com/icons/png/notepad-0.png" width="24" height="24"
+          style="margin-right: 8px; vertical-align: middle;">README.md</a>
+      <a class="start-item" onclick="openWindow('window-chha'); toggleStartMenu();"><img
+          src="https://win98icons.alexmeub.com/icons/png/paint_file-2.png" width="24" height="24"
+          style="margin-right: 8px; vertical-align: middle;">Chha Project</a>
+
+      <div class="start-divider"></div>
+      <a class="start-item"
+        onclick="alert('Windows 98 Simulation: Thank you for viewing Amirul Qayyum\'s resume!');"><img
+          src="https://win98icons.alexmeub.com/icons/png/shut_down_normal-0.png" width="24" height="24"
+          style="margin-right: 8px; vertical-align: middle;">Shut Down...</a>
+    </div>
+  </div>
+
+  <script src="js/app.js"></script>
+</body>
+
+</html>

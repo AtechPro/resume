@@ -1,0 +1,21 @@
+{
+  "name": "win98-resume-cloudflare",
+  "version": "1.0.0",
+  "description": "Windows 98-themed Interactive Resume powered by 98.css and Cloudflare Workers",
+  "main": "src/index.js",
+  "scripts": {
+    "dev": "wrangler dev",
+    "deploy": "wrangler deploy"
+  },
+  "keywords": [
+    "windows98",
+    "98.css",
+    "resume",
+    "cloudflare-workers",
+    "portfolio"
+  ],
+  "author": "Amirul Qayyum (IllyaAtech)",
+  "devDependencies": {
+    "wrangler": "^3.50.0"
+  }
+}
