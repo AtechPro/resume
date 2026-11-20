@@ -41,6 +41,10 @@ npm run deploy
 
 Wrangler prints the live URL, e.g. `https://win98-resume.<your-subdomain>.workers.dev`.
 
+> **No Cloudflare account yet?** `npx wrangler deploy --temporary` publishes to a throwaway preview
+> account with no login at all. Useful for showing someone the site before you commit to an
+> account — but the URL expires, so it is not the one to put on a résumé.
+
 ### Method B — Git integration (Cloudflare dashboard)
 
 1. Push the repo to GitHub.
