@@ -3,6 +3,7 @@ node_modules/
 
 # Cloudflare Wrangler build & dev outputs
 .wrangler/
+dist/
 
 # Agent / AI local workspace configs
 .agent/

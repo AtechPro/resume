@@ -1,11 +1,14 @@
 {
   "name": "win98-resume-cloudflare",
-  "version": "1.0.0",
-  "description": "Windows 98-themed Interactive Resume powered by 98.css and Cloudflare Workers",
+  "version": "1.1.0",
+  "description": "Windows 98-themed interactive resume and portfolio for Amirul Qayyum (IllyaAtech / AtechPro), powered by 98.css and Cloudflare Workers",
   "main": "src/index.js",
+  "private": true,
   "scripts": {
     "dev": "wrangler dev",
-    "deploy": "wrangler deploy"
+    "deploy": "wrangler deploy",
+    "icons": "node download_icons.js",
+    "check": "wrangler deploy --dry-run --outdir=dist"
   },
   "keywords": [
     "windows98",
@@ -14,8 +17,9 @@
     "cloudflare-workers",
     "portfolio"
   ],
-  "author": "Amirul Qayyum (IllyaAtech)",
+  "author": "Amirul Qayyum Bin Sikambar (IllyaAtech / AtechPro)",
+  "license": "MIT",
   "devDependencies": {
-    "wrangler": "^3.50.0"
+    "wrangler": "^4.165.0"
   }
 }

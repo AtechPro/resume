@@ -6,14 +6,19 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>IllyaAtech - Windows 98 Interactive Resume</title>
   <meta name="description"
-    content="Interactive Windows 98-themed Resume & Portfolio of Amirul Qayyum (IllyaAtech) - DevOps, Cloud & Network Infrastructure Engineer.">
-  <meta name="author" content="Amirul Qayyum (IllyaAtech)">
+    content="Interactive Windows 98-themed resume and portfolio of Amirul Qayyum Bin Sikambar (IllyaAtech / AtechPro) - junior DevOps, Cloud and Backend engineer in Kota Kinabalu, Malaysia.">
+  <meta name="author" content="Amirul Qayyum Bin Sikambar (IllyaAtech)">
 
   <!-- Open Graph / Social Media Meta Tags -->
   <meta property="og:title" content="IllyaAtech - Windows 98 Interactive Resume">
   <meta property="og:description"
-    content="DevOps & Network Infrastructure Specialist Interactive Portfolio built in retro Windows 98 style.">
+    content="Junior DevOps, Cloud &amp; Backend engineer - Linux, Docker, Proxmox VE, Flask. Interactive portfolio built in retro Windows 98 style.">
   <meta property="og:type" content="website">
+  <meta property="og:image" content="images/og-preview.png">
+  <meta property="og:image:width" content="1200">
+  <meta property="og:image:height" content="630">
+  <meta name="twitter:card" content="summary_large_image">
+  <meta name="twitter:image" content="images/og-preview.png">
 
   <!-- Favicon / Retro Certificate Icon -->
   <link rel="icon" type="image/svg+xml" href="images/cert.svg">
@@ -24,95 +29,165 @@
 
 <body>
 
+  <!-- ================= BOOT SEQUENCE ================= -->
+  <!-- Hidden by default, so a visitor without JS (or with reduced-motion set) goes
+       straight to the desktop. app.js decides whether to play it. -->
+  <div id="boot-screen" hidden aria-hidden="true">
+    <div id="boot-bios" class="bios-screen">
+      <p class="bios-line">Award Modular BIOS v4.51PG, An Energy Star Ally</p>
+      <p class="bios-line">Copyright (C) 1984-98, Award Software, Inc.</p>
+      <p class="bios-line">&nbsp;</p>
+      <p class="bios-line">PENTIUM II MMX CPU at 350MHz</p>
+      <p class="bios-line">Memory Test : 262144K OK</p>
+      <p class="bios-line">&nbsp;</p>
+      <p class="bios-line">Award Plug and Play BIOS Extension v1.0A</p>
+      <p class="bios-line">Copyright (C) 1998, Award Software, Inc.</p>
+      <p class="bios-line">&nbsp;</p>
+      <p class="bios-line">Detecting IDE Primary Master&nbsp; ... QUANTUM FIREBALL</p>
+      <p class="bios-line">Detecting IDE Primary Slave&nbsp;&nbsp; ... None</p>
+      <p class="bios-line">Detecting IDE Secondary Master ... CD-ROM 32X</p>
+      <p class="bios-line">Detecting IDE Secondary Slave&nbsp; ... None</p>
+      <p class="bios-line">&nbsp;</p>
+      <p class="bios-line bios-line-final">Starting Windows 98 ...</p>
+    </div>
+
+    <div id="boot-splash" class="boot-splash" hidden>
+      <div class="boot-splash-inner">
+        <img src="images/icons/windows-0.png" alt="" class="boot-logo">
+        <div class="boot-splash-text">
+          <p class="boot-brand">Microsoft</p>
+          <p class="boot-product">Windows<sup>98</sup></p>
+        </div>
+      </div>
+      <div class="boot-track">
+        <div class="boot-track-fill"></div>
+      </div>
+      <p class="boot-caption">IllyaAtech &middot; Interactive Resume</p>
+    </div>
+
+    <p class="boot-skip">Click anywhere or press any key to skip</p>
+  </div>
+
   <!-- Desktop Icons Canvas -->
   <main id="desktop">
-    <div class="desktop-icon" onclick="openWindow('window-about')" ondblclick="openWindow('window-about')">
-      <img class="icon-svg" src="https://win98icons.alexmeub.com/icons/png/notepad_file-1.png" alt="About Me">
+    <div class="desktop-icon" data-open="window-about" tabindex="0" role="button">
+      <img class="icon-svg" src="images/icons/notepad_file-1.png" alt="">
       <span>About Me.txt</span>
     </div>
 
-    <div class="desktop-icon" onclick="openWindow('window-experience')" ondblclick="openWindow('window-experience')">
-      <img class="icon-svg" src="https://win98icons.alexmeub.com/icons/png/console_prompt-0.png" alt="Experience">
+    <div class="desktop-icon" data-open="window-experience" tabindex="0" role="button">
+      <img class="icon-svg" src="images/icons/console_prompt-0.png" alt="">
       <span>Experience.exe</span>
     </div>
 
-    <div class="desktop-icon" onclick="openWindow('window-skills')" ondblclick="openWindow('window-skills')">
-      <img class="icon-svg" src="https://win98icons.alexmeub.com/icons/png/gears-0.png" alt="Skills">
-      <span>Skills_&_Certs.dll</span>
+    <div class="desktop-icon" data-open="window-skills" tabindex="0" role="button">
+      <img class="icon-svg" src="images/icons/gears-0.png" alt="">
+      <span>Skills &amp; Certs.dll</span>
     </div>
 
-    <div class="desktop-icon" onclick="openWindow('window-projects')" ondblclick="openWindow('window-projects')">
-      <img class="icon-svg" src="https://win98icons.alexmeub.com/icons/png/directory_closed-4.png" alt="Projects">
+    <div class="desktop-icon" data-open="window-projects" tabindex="0" role="button">
+      <img class="icon-svg" src="images/icons/directory_closed-4.png" alt="">
       <span>Projects.folder</span>
     </div>
 
-    <div class="desktop-icon" onclick="openWindow('window-readme')" ondblclick="openWindow('window-readme')">
-      <img class="icon-svg" src="https://win98icons.alexmeub.com/icons/png/notepad-0.png" alt="README">
+    <div class="desktop-icon" data-open="window-cv" tabindex="0" role="button">
+      <img class="icon-svg" src="images/icons/notepad_file-0.png" alt="">
+      <span>Resume.pdf</span>
+    </div>
+
+    <div class="desktop-icon" data-open="window-readme" tabindex="0" role="button">
+      <img class="icon-svg" src="images/icons/notepad-0.png" alt="">
       <span>README.md</span>
     </div>
 
-    <div class="desktop-icon" onclick="openWindow('window-chha')" ondblclick="openWindow('window-chha')">
-      <img class="icon-svg" src="https://win98icons.alexmeub.com/icons/png/paint_file-2.png" alt="Chha Project">
-      <span>Chha_Project.bmp</span>
+    <div class="desktop-icon" data-open="window-chha" tabindex="0" role="button">
+      <img class="icon-svg" src="images/icons/paint_file-2.png" alt="">
+      <span>CHHA Project.bmp</span>
     </div>
 
-    <div class="desktop-icon" onclick="openWindow('window-recycle')" ondblclick="openWindow('window-recycle')">
-      <img class="icon-svg" src="https://win98icons.alexmeub.com/icons/png/recycle_bin_empty-4.png" alt="Recycle Bin">
+    <div class="desktop-icon" data-open="window-clock" tabindex="0" role="button">
+      <img class="icon-svg" src="images/icons/clock.svg" alt="">
+      <span>Clock.exe</span>
+    </div>
+
+    <div class="desktop-icon" data-open="window-recycle" tabindex="0" role="button">
+      <img class="icon-svg" src="images/icons/recycle_bin_empty-4.png" alt="">
       <span>Recycle Bin</span>
     </div>
   </main>
 
   <!-- ================= WINDOW 1: ABOUT ME ================= -->
-  <div id="window-about" class="window" style="top: 25px; left: 110px; width: 440px; z-index: 10;">
-    <div class="title-bar" onmousedown="focusWindow('window-about')">
+  <div id="window-about" class="window" style="top: 20px; left: 120px; width: 430px; z-index: 10;">
+    <div class="title-bar" data-focus>
       <div class="title-bar-text">
-        <img src="https://win98icons.alexmeub.com/icons/png/notepad_file-1.png" alt="About" width="16" height="16"
-          style="vertical-align: middle; margin-right: 4px; margin-top: -2px;"><span>About Me.txt - Notepad</span>
+        <img src="images/icons/notepad_file-1.png" alt="" width="16" height="16" class="title-icon">
+        <span>About Me.txt - Notepad</span>
       </div>
       <div class="title-bar-controls">
-        <button aria-label="Minimize" onclick="minimizeWindow('window-about')"></button>
+        <button aria-label="Minimize" data-minimize></button>
         <button aria-label="Maximize" disabled></button>
-        <button aria-label="Close" onclick="closeWindow('window-about')"></button>
+        <button aria-label="Close" data-close></button>
       </div>
     </div>
     <div class="window-body">
       <div class="profile-header">
         <div class="avatar-box">IA</div>
         <div>
-          <h3 style="margin-bottom: 2px;">Amirul Qayyum Sikambar</h3>
-          <p><strong>DevOps / Network Infrastructure & Backend</strong></p>
-          <p style="font-size: 11px; color: #555;">
-            <img src="https://win98icons.alexmeub.com/icons/png/message_envelope_open-0.png" width="12" height="12"
-              style="vertical-align: middle;"> <a href="mailto:mirulqayyum@outlook.com">mirulqayyum@outlook.com</a> |
-            <img src="https://win98icons.alexmeub.com/icons/png/world-0.png" width="12" height="12"
-              style="vertical-align: middle;"> <a href="https://github.com/AtechPro" target="_blank"
-              rel="noopener noreferrer">Github:
-              AtechPro</a> | <img src="https://win98icons.alexmeub.com/icons/png/telephony-0.png" width="12" height="12"
-              style="vertical-align: middle;"> 01170745731
+          <h3>Amirul Qayyum Bin Sikambar</h3>
+          <p><strong>Junior DevOps / Cloud Infrastructure / Backend</strong></p>
+          <p class="contact-line">
+            <img src="images/icons/message_envelope_open-0.png" width="12" height="12" alt="Email">
+            <a href="mailto:mirulqayyum@outlook.com">mirulqayyum@outlook.com</a>
+          </p>
+          <p class="contact-line">
+            <img src="images/icons/world-0.png" width="12" height="12" alt="GitHub">
+            GitHub: <a href="https://github.com/AtechPro" target="_blank" rel="noopener noreferrer">AtechPro</a>
+          </p>
+          <p class="contact-line">
+            <img src="images/icons/telephony-0.png" width="12" height="12" alt="Phone">
+            01170745731
+          </p>
+          <p class="contact-line location-line">
+            Kota Kinabalu / Remote &nbsp;|&nbsp; Malaysian Citizen &nbsp;|&nbsp; Open to relocation (KL / Sabah)
           </p>
         </div>
       </div>
       <fieldset>
         <legend>Executive Summary</legend>
-        <p style="margin-bottom: 8px; line-height: 1.4; font-size: 12px;">
-          Network Engineering graduate and AWS Certified Cloud Practitioner with hands-on experience in Linux system
-          administration, Docker containerization, and virtualization architectures (Proxmox VE).
+        <p class="summary-p">
+          Network Engineering graduate (BSc Computer Science with Honours, UMS, 2025) and AWS Certified Cloud
+          Practitioner, with hands-on Linux system administration, Docker containerization and Proxmox VE
+          virtualization.
         </p>
-        <p style="margin-bottom: 8px; line-height: 1.4; font-size: 12px;">
-          Proven track record of automating operational workflows, managing distributed hybrid infrastructure, and
-          configuring secure network routing (HCIA Datacom, Tailscale, Cloudflare Tunnels).
+        <p class="summary-p">
+          I build and ship working systems, not slideware: during a six-month internship I built and deployed two
+          containerized Flask services (Docker, Linux, DigitalOcean) that replaced manual Word-based workflows, and I
+          currently design, run and maintain a multi-node homelab from the metal up.
         </p>
-        <p style="line-height: 1.4; font-size: 12px;">
-          Strong background in infrastructure troubleshooting and system monitoring, looking to leverage a robust
-          foundation in networking and container deployment as a DevOps & Backend Engineer.
+        <p class="summary-p">
+          Field engineering experience across client sites &mdash; AV and PC installation, troubleshooting, preventive
+          maintenance &mdash; so I am comfortable with hardware, cabling, documentation and talking to the people
+          affected when something breaks.
+        </p>
+        <p class="summary-p last">
+          Looking for a first junior Cloud / DevOps / Backend role with real production exposure. Immediately available.
         </p>
       </fieldset>
-      <fieldset style="margin-top: 8px;">
-        <legend>My Philosophy™ & Life Rules</legend>
-        <div style="font-size: 11px; font-style: italic; line-height: 1.4;">
-          <p style="margin-bottom: 4px;">"Simple & Easy, but Special Edition. (SE but SE) Sufficient & Efficient, but
-            with Superior Execution."</p>
-          <p style="margin-bottom: 4px;">"Collect, Reallocate, Recovery, Review, Revise/Reconsider (C4Re Formation)"</p>
+      <fieldset class="fieldset-spaced">
+        <legend>What I am honest about</legend>
+        <div class="honest-list">
+          <p>AWS: certified and lab-tested, <em>not</em> production cloud experience yet.</p>
+          <p>Terraform: real but limited &mdash; currently building it out in my CloudEng repo.</p>
+          <p>I have no production-scale backend or on-call SRE background. That is exactly the experience I am
+            applying for.</p>
+        </div>
+      </fieldset>
+      <fieldset class="fieldset-spaced">
+        <legend>My Philosophy&trade; &amp; Life Rules</legend>
+        <div class="philosophy">
+          <p>"Simple &amp; Easy, but Special Edition. (SE but SE) Sufficient &amp; Efficient, but with Superior
+            Execution."</p>
+          <p>"Collect, Reallocate, Recovery, Review, Revise/Reconsider (C4Re Formation)"</p>
           <p>"Every feature merged on GitHub carries a cost: increased complexity, potential for bugs... Everything
             Always Comes with a cost, Despite being free."</p>
         </div>
@@ -126,57 +201,53 @@
   </div>
 
   <!-- ================= WINDOW 2: WORK EXPERIENCE ================= -->
-  <div id="window-experience" class="window" style="top: 35px; left: calc(100vw - 580px); width: 540px; z-index: 9;">
-    <div class="title-bar" onmousedown="focusWindow('window-experience')">
+  <div id="window-experience" class="window" style="top: 30px; left: 560px; width: 540px; z-index: 9;">
+    <div class="title-bar" data-focus>
       <div class="title-bar-text">
-        <img src="https://win98icons.alexmeub.com/icons/png/console_prompt-0.png" alt="Experience" width="16"
-          height="16" style="vertical-align: middle; margin-right: 4px; margin-top: -2px;"><span>Work
-          Experience.exe</span>
+        <img src="images/icons/console_prompt-0.png" alt="" width="16" height="16" class="title-icon">
+        <span>Work Experience.exe</span>
       </div>
       <div class="title-bar-controls">
-        <button aria-label="Minimize" onclick="minimizeWindow('window-experience')"></button>
+        <button aria-label="Minimize" data-minimize></button>
         <button aria-label="Maximize" disabled></button>
-        <button aria-label="Close" onclick="closeWindow('window-experience')"></button>
+        <button aria-label="Close" data-close></button>
       </div>
     </div>
-    <div class="window-body"
-      style="background-color: #000; color: #0f0; font-family: 'Courier New', Courier, monospace; padding: 10px; margin: 0; overflow-y: auto; max-height: 400px; font-size: 12px; line-height: 1.4;">
-      <p style="margin-bottom: 12px;">Microsoft(R) Windows 98<br>
+    <div class="window-body terminal-body">
+      <p class="term-line">Microsoft(R) Windows 98<br>
         (C)Copyright Microsoft Corp 1981-1999.</p>
 
-      <p style="margin-bottom: 12px; color: #0f0;">C:\> <span style="color: #0f0;">WORK_EXPERIENCE.EXE</span></p>
+      <p class="term-line">C:\&gt; <span>WORK_EXPERIENCE.EXE</span></p>
 
-      <div style="margin-bottom: 16px;">
-        <p style="color: #0f0; font-weight: bold;">> Field Engineer — I Seen Technology Sdn BHD</p>
-        <p style="color: #0c0; margin-bottom: 4px;"> [April 2026 - May 2026]</p>
-        <div style="margin-left: 12px; border-left: 1px solid #090; padding-left: 10px;">
-          <p style="margin-bottom: 4px;">- Installed and configured AV systems, PCs, and related IT equipment across
-            multiple client sites, while performing troubleshooting and preventive maintenance to replace inconsistent
-            manual support with structured on-site technical service.</p>
-          <p style="margin-bottom: 4px;">- Executed field installations, preventive maintenance, and troubleshooting
-            assignments across diverse locations, producing daily technical reports for completed PM, installation, and
-            issue resolution activities to improve service tracking and operational accountability.</p>
-          <p>- Coordinated directly with site stakeholders and higher-level personnel to negotiate scheduling, manage
-            unpredictable travel demands, and ensure timely task completion across multiple deployment environments.</p>
+      <div class="term-job">
+        <p class="term-role">&gt; Field Engineer &mdash; I Seen Technology Sdn Bhd</p>
+        <p class="term-date"> [April 2026 - May 2026 | Kota Kinabalu]</p>
+        <div class="term-bullets">
+          <p>- Installed and configured AV systems, PCs and related IT equipment across multiple client sites, and
+            performed troubleshooting and preventive maintenance to replace inconsistent manual support with
+            structured on-site technical service.</p>
+          <p>- Produced daily technical reports covering completed preventive maintenance, installations and issue
+            resolution, improving service tracking and operational accountability.</p>
+          <p>- Coordinated directly with site stakeholders to negotiate scheduling, manage unpredictable travel
+            demands and ensure timely task completion across multiple deployment environments.</p>
         </div>
       </div>
 
-      <div style="margin-bottom: 16px;">
-        <p style="color: #0f0; font-weight: bold;">> Full Stack Developer Intern — Lenog Plant Service SDN BHD</p>
-        <p style="color: #0c0; margin-bottom: 4px;"> [Mar 2025 - Aug 2025]</p>
-        <div style="margin-left: 12px; border-left: 1px solid #090; padding-left: 10px;">
-          <p style="margin-bottom: 4px;">- Developed and deployed a full-stack Letter Generation System (Flask,
-            JavaScript, Docker, Linux/DigitalOcean) to replace manual Word-based workflows, improving document
-            standardization, reducing processing time, and increasing operational efficiency.</p>
-          <p style="margin-bottom: 4px;">- Built and deployed a mobile-responsive Valve Reporting System (Flask,
-            JavaScript, Docker, Caddy, Linux) to digitize manual field reporting, improving reporting accuracy,
-            accessibility, and field data collection efficiency.</p>
-          <p>- Managed NAS-to-SSD on-premise backup processes to ensure data integrity and business continuity, while
-            researching cloud-based backup solutions to support future scalability and disaster recovery planning.</p>
+      <div class="term-job">
+        <p class="term-role">&gt; Full Stack Developer Intern &mdash; Lenog Plant Service Sdn Bhd</p>
+        <p class="term-date"> [Mar 2025 - Aug 2025]</p>
+        <div class="term-bullets">
+          <p>- Built and deployed a full-stack Letter Generation System (Flask, JavaScript, Docker, Linux /
+            DigitalOcean) that replaced a manual Word-based workflow, standardising documents and cutting the
+            processing time per letter.</p>
+          <p>- Built and deployed a mobile-responsive Valve Reporting System (Flask, JavaScript, Docker, Caddy, Linux)
+            to digitise manual field reporting, improving reporting accuracy and field data collection.</p>
+          <p>- Managed NAS-to-SSD on-premise backup and researched cloud backup options, and owned both services
+            end-to-end from code to container to Linux host.</p>
         </div>
       </div>
 
-      <p style="color: #0f0;">C:\> <span class="cmd-blink">_</span></p>
+      <p class="term-prompt">C:\&gt; <span class="cmd-blink">_</span></p>
     </div>
     <div class="status-bar">
       <p class="status-bar-field">2 Roles Recorded</p>
@@ -185,258 +256,327 @@
   </div>
 
   <!-- ================= WINDOW 3: SKILLS & CERTIFICATIONS ================= -->
-  <div id="window-skills" class="window" style="top: 340px; left: 120px; width: 460px; z-index: 8;">
-    <div class="title-bar" onmousedown="focusWindow('window-skills')">
+  <div id="window-skills" class="window" style="top: 60px; left: 140px; width: 480px; z-index: 8;">
+    <div class="title-bar" data-focus>
       <div class="title-bar-text">
-        <img src="https://win98icons.alexmeub.com/icons/png/gears-0.png" alt="Skills" width="16" height="16"
-          style="vertical-align: middle; margin-right: 4px; margin-top: -2px;"><span>Skills_&_Certs.dll</span>
+        <img src="images/icons/gears-0.png" alt="" width="16" height="16" class="title-icon">
+        <span>Skills_&amp;_Certs.dll</span>
       </div>
       <div class="title-bar-controls">
-        <button aria-label="Minimize" onclick="minimizeWindow('window-skills')"></button>
+        <button aria-label="Minimize" data-minimize></button>
         <button aria-label="Maximize" disabled></button>
-        <button aria-label="Close" onclick="closeWindow('window-skills')"></button>
+        <button aria-label="Close" data-close></button>
       </div>
     </div>
     <div class="window-body">
-      <fieldset style="margin-bottom: 12px;">
-        <legend>Technical Competencies & Domains</legend>
-        <div style="font-size: 11px; display: flex; flex-direction: column; gap: 8px;">
+      <fieldset class="fieldset-spaced-bottom">
+        <legend>Technical Competencies &amp; Domains</legend>
+        <div class="skill-groups">
 
-          <div>
-            <strong><img src="https://win98icons.alexmeub.com/icons/png/cd_drive-0.png" width="12" height="12"
-                style="vertical-align: middle; margin-right: 4px;">Containers & Virtualization:</strong>
-            <div style="display: flex; flex-wrap: wrap; gap: 4px; margin-top: 4px;">
-              <button style="padding: 2px 6px;">Docker</button>
-              <button style="padding: 2px 6px;">Proxmox VE</button>
-              <button style="padding: 2px 6px;">LXC</button>
+          <div class="skill-group">
+            <strong><img src="images/icons/cd_drive-0.png" width="12" height="12" class="inline-icon"
+                alt="">Containers &amp; Virtualization:</strong>
+            <div class="skill-chips">
+              <button class="chip">Docker</button>
+              <button class="chip">Proxmox VE</button>
+              <button class="chip">LXC</button>
             </div>
           </div>
 
-          <div>
-            <strong><img src="https://win98icons.alexmeub.com/icons/png/world_network_directories-0.png" width="12"
-                height="12" style="vertical-align: middle; margin-right: 4px;">Networking & Zero Trust:</strong>
-            <div style="display: flex; flex-wrap: wrap; gap: 4px; margin-top: 4px;">
-              <button style="padding: 2px 6px;">Tailscale Mesh VPN</button>
-              <button style="padding: 2px 6px;">Cloudflare Tunnels</button>
+          <div class="skill-group">
+            <strong><img src="images/icons/world_network_directories-0.png" width="12" height="12" class="inline-icon"
+                alt="">Networking &amp; Zero Trust:</strong>
+            <div class="skill-chips">
+              <button class="chip">Tailscale Mesh VPN</button>
+              <button class="chip">Cloudflare Tunnels</button>
+              <button class="chip">TCP/IP</button>
+              <button class="chip">Routing &amp; Switching</button>
             </div>
           </div>
 
-          <div>
-            <strong><img src="https://win98icons.alexmeub.com/icons/png/script_file_yellow-0.png" width="12" height="12"
-                style="vertical-align: middle; margin-right: 4px;">Languages & Backend:</strong>
-            <div style="display: flex; flex-wrap: wrap; gap: 4px; margin-top: 4px;">
-              <button style="padding: 2px 6px;">Python (Flask)</button>
-              <button style="padding: 2px 6px;">JavaScript</button>
-              <button style="padding: 2px 6px;">Bash</button>
-              <button style="padding: 2px 6px;">Terraform</button>
-              <button style="padding: 2px 6px;">SQLite</button>
+          <div class="skill-group">
+            <strong><img src="images/icons/script_file_yellow-0.png" width="12" height="12" class="inline-icon"
+                alt="">Languages &amp; Backend:</strong>
+            <div class="skill-chips">
+              <button class="chip">Python (Flask)</button>
+              <button class="chip">JavaScript</button>
+              <button class="chip">Bash</button>
+              <button class="chip">SQLite</button>
             </div>
           </div>
 
-          <div>
-            <strong><img src="https://win98icons.alexmeub.com/icons/png/tools_gear-0.png" width="12" height="12"
-                style="vertical-align: middle; margin-right: 4px;">OS & Hardware:</strong>
-            <div style="display: flex; flex-wrap: wrap; gap: 4px; margin-top: 4px;">
-              <button style="padding: 2px 6px;">Arch / Fedora / Debian / Ubuntu</button>
-              <button style="padding: 2px 6px;">Raspberry Pi</button>
-              <button style="padding: 2px 6px;">Hardware Component Repair</button>
+          <div class="skill-group">
+            <strong><img src="images/icons/script_file_blue-0.png" width="12" height="12" class="inline-icon"
+                alt="">Cloud &amp; Infrastructure as Code:</strong>
+            <div class="skill-chips">
+              <button class="chip">AWS (Cloud Practitioner)</button>
+              <button class="chip">Terraform</button>
             </div>
           </div>
 
-          <div>
-            <strong><img src="https://win98icons.alexmeub.com/icons/png/processor-0.png" width="12" height="12"
-                style="vertical-align: middle; margin-right: 4px;">IoT & Tools:</strong>
-            <div style="display: flex; flex-wrap: wrap; gap: 4px; margin-top: 4px;">
-              <button style="padding: 2px 6px;">MQTT</button>
-              <button style="padding: 2px 6px;">ESP8266</button>
-              <button style="padding: 2px 6px;">Git</button>
+          <div class="skill-group">
+            <strong><img src="images/icons/tools_gear-0.png" width="12" height="12" class="inline-icon" alt="">OS &amp;
+                Hardware:</strong>
+            <div class="skill-chips">
+              <button class="chip">Debian / Ubuntu</button>
+              <button class="chip">Arch / Fedora</button>
+              <button class="chip">Raspberry Pi</button>
+              <button class="chip">PC &amp; AV Hardware</button>
+            </div>
+          </div>
+
+          <div class="skill-group">
+            <strong><img src="images/icons/processor-0.png" width="12" height="12" class="inline-icon" alt="">IoT &amp;
+                Tooling:</strong>
+            <div class="skill-chips">
+              <button class="chip">MQTT</button>
+              <button class="chip">ESP8266 / ESP32</button>
+              <button class="chip">Git</button>
+              <button class="chip">Nginx Proxy Manager</button>
             </div>
           </div>
 
         </div>
       </fieldset>
 
-      <fieldset style="margin-bottom: 12px;">
+      <fieldset class="fieldset-spaced-bottom">
         <legend>Official Certifications</legend>
-        <div style="font-size: 12px; line-height: 1.4;">
-          <p><img src="https://win98icons.alexmeub.com/icons/png/certificate-0.png" width="12" height="12"
-              style="vertical-align: middle; margin-right: 4px;"> <strong>Amazon Web Service (AWS) - Cloud
-              Practitioner</strong> (Dec 2025)</p>
-          <p style="font-size: 11px; color: #555; margin-left: 16px; margin-bottom: 6px;">Applied foundational cloud
-            architecture principles to align AWS core services with specific business requirements.</p>
-          <p><img src="https://win98icons.alexmeub.com/icons/png/certificate-0.png" width="12" height="12"
-              style="vertical-align: middle; margin-right: 4px;"> <strong>Huawei Certified ICT Associate (HCIA) -
-              Datacom</strong> (Oct 2023)</p>
-          <p style="font-size: 11px; color: #555; margin-left: 16px;">Expanded multi-vendor networking expertise by
-            applying core Routing and Switching principles.</p>
+        <div class="cert-list">
+          <p><img src="images/icons/certificate-0.png" width="12" height="12" class="inline-icon" alt="">
+            <strong>AWS Certified Cloud Practitioner</strong> (Dec 2025 &mdash; active)</p>
+          <p class="cert-note">Foundational cloud architecture: core AWS services, billing, shared responsibility and
+            well-architected basics. Certified and lab-tested &mdash; not yet production cloud experience.</p>
+          <p><img src="images/icons/certificate-0.png" width="12" height="12" class="inline-icon" alt="">
+            <strong>Huawei Certified ICT Associate (HCIA) &mdash; Datacom</strong> (Oct 2023 &mdash; <strong>valid to
+              Oct 2026</strong>)</p>
+          <p class="cert-note">Multi-vendor routing and switching fundamentals. Credential currently active.</p>
         </div>
       </fieldset>
 
       <fieldset>
         <legend>Education Background</legend>
-        <div style="font-size: 12px; line-height: 1.4;">
-          <p><img src="https://win98icons.alexmeub.com/icons/png/book_open-0.png" width="12" height="12"
-              style="vertical-align: middle; margin-right: 4px;"> <strong>Universiti Malaysia Sabah</strong></p>
-          <p style="font-size: 11px; margin-left: 16px;">• Bachelor of Computer Science with Honours (Network
-            Engineering) [Oct 2021 - Nov 2025]</p>
-          <p style="font-size: 11px; margin-left: 16px;">• Foundation in Information and Technology [Aug 2020 - July
-            2021]</p>
+        <div class="cert-list">
+          <p><img src="images/icons/notepad_file-0.png" width="12" height="12" class="inline-icon" alt="">
+            <strong>Universiti Malaysia Sabah</strong></p>
+          <p class="edu-line">Bachelor of Computer Science with Honours (Network Engineering) [Oct 2021 - Nov 2025]</p>
+          <p class="edu-line">Foundation in Information and Technology [Aug 2020 - July 2021]</p>
         </div>
       </fieldset>
     </div>
     <div class="status-bar">
-      <p class="status-bar-field">AWS & HCIA Verified</p>
+      <p class="status-bar-field">AWS &amp; HCIA Verified</p>
       <p class="status-bar-field">UMS Network Eng.</p>
     </div>
   </div>
 
   <!-- ================= WINDOW 4: PROJECTS ================= -->
-  <div id="window-projects" class="window" style="top: 140px; left: calc(50vw - 270px); width: 520px; z-index: 7;">
-    <div class="title-bar" onmousedown="focusWindow('window-projects')">
+  <div id="window-projects" class="window" style="top: 150px; left: 400px; width: 560px; z-index: 7;">
+    <div class="title-bar" data-focus>
       <div class="title-bar-text">
-        <img src="https://win98icons.alexmeub.com/icons/png/directory_closed-4.png" alt="Projects" width="16"
-          height="16" style="vertical-align: middle; margin-right: 4px; margin-top: -2px;"><span>Projects.folder</span>
+        <img src="images/icons/directory_closed-4.png" alt="" width="16" height="16" class="title-icon">
+        <span>Projects.folder</span>
       </div>
       <div class="title-bar-controls">
-        <button aria-label="Minimize" onclick="minimizeWindow('window-projects')"></button>
+        <button aria-label="Minimize" data-minimize></button>
         <button aria-label="Maximize" disabled></button>
-        <button aria-label="Close" onclick="closeWindow('window-projects')"></button>
+        <button aria-label="Close" data-close></button>
       </div>
     </div>
     <div class="window-body">
-      <menu role="tablist">
-        <li role="tab" aria-selected="true"><a href="#tab1" onclick="switchTab(event, 'tab1')">Hybrid Infra & AI Lab</a>
-        </li>
-        <li role="tab"><a href="#tab2" onclick="switchTab(event, 'tab2')">Internal Operation System</a></li>
-        <li role="tab"><a href="#tab3" onclick="switchTab(event, 'tab3')">IoT Home Automation</a></li>
-      </menu>
-      <div class="window" role="tabpanel"
-        style="position: relative !important; display: block; border-top: none; width: 100%;">
+      <div class="tablist" role="tablist">
+        <button class="tab" role="tab" aria-selected="true" data-tab="tab1">Homelab &amp; AI Lab</button>
+        <button class="tab" role="tab" aria-selected="false" data-tab="tab2">CHHA &mdash; IoT</button>
+        <button class="tab" role="tab" aria-selected="false" data-tab="tab3">CloudEng &mdash; Terraform</button>
+      </div>
+      <div class="tab-panel">
 
-        <!-- PROJECT 1 TAB -->
-        <div id="tab1" class="tab-content" style="padding: 8px;">
-          <h4><img src="https://win98icons.alexmeub.com/icons/png/server_window-0.png" width="14" height="14"
-              style="vertical-align: middle; margin-right: 4px;">Docker Homelab</h4>
-          <ul style="font-size: 11px; margin: 6px 0 6px 16px; line-height: 1.4;">
-            <li>Self-hosted services</li>
-            <li>Reverse Proxy using Nginx Proxy Manager</li>
-            <li>Cloudflare Tunnel</li>
-            <li>Tailscale</li>
+        <div id="tab1" class="tab-content" role="tabpanel">
+          <h4><img src="images/icons/gears-0.png" width="14" height="14" class="inline-icon" alt="">Distributed Hybrid
+            Infrastructure &amp; Private AI Lab</h4>
+          <p class="tab-desc">Always-on private lab I design, build and maintain myself, running across bare metal and
+            containers.</p>
+          <ul class="tab-list">
+            <li><strong>Virtualization:</strong> Proxmox VE, LXC containers</li>
+            <li><strong>Containers:</strong> Docker self-hosted services, Nginx Proxy Manager reverse proxy</li>
+            <li><strong>Services:</strong> AdGuard, Home Assistant, Uptime Kuma, ITTools</li>
+            <li><strong>Local AI:</strong> Ollama + Stable Diffusion on RTX 3060 (CUDA)</li>
+            <li><strong>Remote access:</strong> Tailscale mesh VPN, Cloudflare Tunnel</li>
           </ul>
+          <p class="tab-note">Private infrastructure &mdash; no public repository. Happy to walk through the setup.</p>
         </div>
 
-        <!-- PROJECT 2 TAB -->
-        <div id="tab2" class="tab-content" style="padding: 8px; display: none;">
-          <h4><img src="https://win98icons.alexmeub.com/icons/png/settings_gear-0.png" width="14" height="14"
-              style="vertical-align: middle; margin-right: 4px;">Homelab Infrastructure</h4>
-          <ul style="font-size: 11px; margin: 6px 0 6px 16px; line-height: 1.4;">
-            <li>Proxmox VE Virtualization</li>
-            <li>Home Assistant</li>
-            <li>Docker & LXC Containers</li>
-            <li>Experimenting with infrastructure routing</li>
+        <div id="tab2" class="tab-content" role="tabpanel" hidden>
+          <h4><img src="images/icons/processor-0.png" width="14" height="14" class="inline-icon" alt="">Centralized Hub
+            Home Automation (CHHA)</h4>
+          <p class="tab-desc">Modular IoT automation system built from the hardware up &mdash; Raspberry Pi hub with
+            ESP8266/ESP32 nodes over MQTT.</p>
+          <ul class="tab-list">
+            <li>Raspberry Pi hub + ESP8266/ESP32 sensor and relay nodes</li>
+            <li>MQTT messaging between devices and hub</li>
+            <li>Flask backend with modular devices, rules, scheduling, roles and zones</li>
+            <li>Designed for extensibility rather than as a single fixed automation</li>
           </ul>
+          <p class="tab-note"><a href="https://github.com/AtechPro/chha" target="_blank"
+              rel="noopener noreferrer">github.com/AtechPro/chha</a></p>
         </div>
 
-        <!-- PROJECT 3 TAB -->
-        <div id="tab3" class="tab-content" style="padding: 8px; display: none;">
-          <h4><img src="https://win98icons.alexmeub.com/icons/png/processor-0.png" width="14" height="14"
-              style="vertical-align: middle; margin-right: 4px;">AI Integrations</h4>
-          <ul style="font-size: 11px; margin: 6px 0 6px 16px; line-height: 1.4;">
-            <li>Ollama (Local LLM deployments)</li>
-            <li>Openrouter integration</li>
-            <li>n8n workflow testing</li>
+        <div id="tab3" class="tab-content" role="tabpanel" hidden>
+          <h4><img src="images/icons/script_file_blue-0.png" width="14" height="14" class="inline-icon" alt="">CloudEng
+            &mdash; Terraform</h4>
+          <p class="tab-desc">My cloud engineering working repository &mdash; the most recent work in it is
+            Terraform, as I convert my homelab and cloud experiments into declared infrastructure.</p>
+          <ul class="tab-list">
+            <li>Terraform for provisioning (in active development)</li>
+            <li>AWS fundamentals applied alongside the Cloud Practitioner study</li>
+            <li>Active repository &mdash; commit history shows current work</li>
           </ul>
+          <p class="tab-note"><a href="https://github.com/AtechPro/CloudEng" target="_blank"
+              rel="noopener noreferrer">github.com/AtechPro/CloudEng</a></p>
         </div>
 
       </div>
     </div>
     <div class="status-bar">
       <p class="status-bar-field">3 Core Projects</p>
+      <p class="status-bar-field">2 Repos Linked</p>
+    </div>
+  </div>
+
+  <!-- ================= WINDOW 5: RESUME DOWNLOAD ================= -->
+  <div id="window-cv" class="window" style="top: 200px; left: 430px; width: 400px; z-index: 21;">
+    <div class="title-bar" data-focus>
+      <div class="title-bar-text">
+        <img src="images/icons/notepad_file-0.png" alt="" width="16" height="16" class="title-icon">
+        <span>Resume.pdf - Download</span>
+      </div>
+      <div class="title-bar-controls">
+        <button aria-label="Minimize" data-minimize></button>
+        <button aria-label="Maximize" disabled></button>
+        <button aria-label="Close" data-close></button>
+      </div>
+    </div>
+    <div class="window-body">
+      <div class="cv-file-row">
+        <img src="images/icons/notepad_file-0.png" width="32" height="32" alt="">
+        <div>
+          <p class="cv-name"><strong>Amirul-Qayyum-Resume.pdf</strong></p>
+          <p class="cv-meta">PDF document &nbsp;&middot;&nbsp; 4 KB &nbsp;&middot;&nbsp; 2 pages</p>
+          <p class="cv-meta">Junior DevOps / Cloud / Backend &mdash; general version</p>
+        </div>
+      </div>
+      <fieldset class="fieldset-spaced">
+        <legend>Contents</legend>
+        <ul class="tab-list">
+          <li>Contact details and links</li>
+          <li>Executive summary and technical skills</li>
+          <li>Work experience and education</li>
+          <li>Projects, certifications and homelab</li>
+        </ul>
+      </fieldset>
+      <p class="cv-actions">
+        <a class="download-btn" href="./resume.pdf" download="Amirul-Qayyum-Resume.pdf">Save to Disk</a>
+        <a class="download-btn secondary" href="./resume.pdf" target="_blank" rel="noopener noreferrer">Open in
+          Viewer</a>
+      </p>
+      <p class="cv-hint">Looking for a role-specific version? Email mirulqayyum@outlook.com and I will send the
+        Cloud, DevOps, Backend or Network variant.</p>
+    </div>
+    <div class="status-bar">
+      <p class="status-bar-field">1 file selected</p>
+      <p class="status-bar-field">4 KB</p>
     </div>
   </div>
 
   <!-- ================= WINDOW 6: RECYCLE BIN ================= -->
-  <div id="window-recycle" class="window" style="top: 420px; left: calc(50vw - 170px); width: 320px; z-index: 4;">
-    <div class="title-bar" onmousedown="focusWindow('window-recycle')">
+  <div id="window-recycle" class="window" style="top: 430px; left: 420px; width: 320px; z-index: 4;">
+    <div class="title-bar" data-focus>
       <div class="title-bar-text">
-        <img src="https://win98icons.alexmeub.com/icons/png/recycle_bin_empty-4.png" alt="Recycle Bin" width="16"
-          height="16" style="vertical-align: middle; margin-right: 4px; margin-top: -2px;"><span>Recycle Bin</span>
+        <img src="images/icons/recycle_bin_empty-4.png" alt="" width="16" height="16" class="title-icon">
+        <span>Recycle Bin</span>
       </div>
       <div class="title-bar-controls">
-        <button aria-label="Minimize" onclick="minimizeWindow('window-recycle')"></button>
+        <button aria-label="Minimize" data-minimize></button>
         <button aria-label="Maximize" disabled></button>
-        <button aria-label="Close" onclick="closeWindow('window-recycle')"></button>
+        <button aria-label="Close" data-close></button>
       </div>
     </div>
     <div class="window-body">
-      <p style="font-size: 12px; margin-bottom: 8px;">Items in Recycle Bin:</p>
+      <p class="recycle-intro">Items in Recycle Bin:</p>
       <div class="tree-view">
-        <p style="font-size: 11px;"><img src="https://win98icons.alexmeub.com/icons/png/notepad_file-0.png" width="12"
-            height="12" style="vertical-align: text-bottom; margin-right: 2px;"> Manual_Workflow.md (0 KB)
-        </p>
-        <p style="font-size: 11px;"><img src="https://win98icons.alexmeub.com/icons/png/notepad_file-0.png" width="12"
-            height="12" style="vertical-align: text-bottom; margin-right: 2px;"> ego_centric.log (0 KB)</p>
+        <p class="recycle-item"><img src="images/icons/notepad_file-0.png" width="12" height="12" alt="">
+          Manual_Workflow.md (0 KB)</p>
+        <p class="recycle-item"><img src="images/icons/notepad_file-0.png" width="12" height="12" alt="">
+          copy_of_final_v3_FINAL.docx (0 KB)</p>
       </div>
+      <p class="recycle-note">Both deleted 2025. Neither is coming back.</p>
     </div>
     <div class="status-bar">
       <p class="status-bar-field">2 items (0 bytes)</p>
     </div>
   </div>
 
-  <!-- ================= WINDOW 8: README ================= -->
-  <div id="window-readme" class="window" style="top: 60px; left: calc(50vw - 250px); width: 500px; z-index: 15;">
-    <div class="title-bar" onmousedown="focusWindow('window-readme')">
+  <!-- ================= WINDOW 7: README ================= -->
+  <div id="window-readme" class="window" style="top: 20px; left: 556px; width: 500px; z-index: 15;">
+    <div class="title-bar" data-focus>
       <div class="title-bar-text">
-        <img src="https://win98icons.alexmeub.com/icons/png/notepad-0.png" alt="README" width="16" height="16"
-          style="vertical-align: middle; margin-right: 4px; margin-top: -2px;"><span>README.md - Notepad</span>
+        <img src="images/icons/notepad-0.png" alt="" width="16" height="16" class="title-icon">
+        <span>README.md - Notepad</span>
       </div>
       <div class="title-bar-controls">
-        <button aria-label="Minimize" onclick="minimizeWindow('window-readme')"></button>
+        <button aria-label="Minimize" data-minimize></button>
         <button aria-label="Maximize" disabled></button>
-        <button aria-label="Close" onclick="closeWindow('window-readme')"></button>
+        <button aria-label="Close" data-close></button>
       </div>
     </div>
-    <div class="window-body" style="padding: 8px;">
-      <p style="font-weight: bold; font-size: 14px; margin-bottom: 8px;"><img
-          src="https://win98icons.alexmeub.com/icons/png/msg_information-0.png" width="14" height="14"
-          style="vertical-align: middle; margin-right: 4px;">Yokoso Watashi no Portfolio Website</p>
-      <p style="font-weight: bold; font-size: 12px; margin-bottom: 8px;"><img
-          src="https://win98icons.alexmeub.com/icons/png/user_computer_pair-0.png" width="14" height="14"
-          style="vertical-align: middle; margin-right: 4px;">Who This? Sepa Ni?? だれですが？ 是谁呢？🤔</p>
-      <p style="font-size: 12px; margin-bottom: 8px;">My Name is Amirul Qayyum Si Kambar, Some would call me AtechPro,
-        Well i
-        Im a Network Engineer Graduate where I also extend myself into DevOps. </p>
+    <div class="window-body">
+      <p class="readme-title"><img src="images/icons/msg_information-0.png" width="14" height="14" class="inline-icon"
+          alt="">Yokoso Watashi no Portfolio Website</p>
+      <p class="readme-sub"><img src="images/icons/user_computer_pair-0.png" width="14" height="14" class="inline-icon"
+          alt="">Who This? Sepa Ni?? だれですが？ 是谁呢？🤔</p>
+      <p class="readme-blurb">My name is <strong>Amirul Qayyum Bin Sikambar</strong>. Some would call me IllyaAtech;
+        online I am <a href="https://github.com/AtechPro" target="_blank" rel="noopener noreferrer">AtechPro</a>. I am
+        a Network Engineering graduate who extends into DevOps &mdash; Linux, containers and the infrastructure that
+        holds them together.</p>
 
-      <fieldset style="margin-bottom: 8px;">
-        <legend>Stuff I Like & Do:</legend>
-        <ul style="font-size: 11px; line-height: 1.5; margin-left: 16px;">
-          <li><img src="https://win98icons.alexmeub.com/icons/png/network_normal_two_pcs-0.png" width="12" height="12"
-              style="vertical-align: middle; margin-right: 4px;"> <strong>Connecting Systems:</strong> Building things that talk to each other (like Hatsune Miku connecting the world 🎵).</li>
-          <li><img src="https://win98icons.alexmeub.com/icons/png/server_to_desktop-0.png" width="12" height="12"
-              style="vertical-align: middle; margin-right: 4px;"> <strong>Cloud & Virtualization:</strong> Tinkering with Docker containers, Proxmox VMs, and homelab setups.</li>
-          <li><img src="https://win98icons.alexmeub.com/icons/png/network_drive_connected-0.png" width="12" height="12"
-              style="vertical-align: middle; margin-right: 4px;"> <strong>Network Tunnels:</strong> Tunneling <code>localhost</code> to the wild web using Cloudflare Tunnels & Tailscale. Big open-source fan!</li>
-          <li><img src="https://win98icons.alexmeub.com/icons/png/script_file_blue-0.png" width="12" height="12"
-              style="vertical-align: middle; margin-right: 4px;"> <strong>Automation & Scripts:</strong> Writing Python & Bash tools so I don't have to do repetitive tasks manually twice.</li>
-          <li><img src="https://win98icons.alexmeub.com/icons/png/computer_explorer-0.png" width="12" height="12"
-              style="vertical-align: middle; margin-right: 4px;"> <strong>Network Architecture:</strong> Genuinely fascinated by routing, packets, and watching nodes handshake seamlessly.</li>
+      <fieldset class="fieldset-spaced-bottom">
+        <legend>Stuff I Like &amp; Do:</legend>
+        <ul class="readme-list">
+          <li><img src="images/icons/network_normal_two_pcs-0.png" width="12" height="12" class="inline-icon" alt="">
+            <strong>Connecting Systems:</strong> Building things that talk to each other (like Hatsune Miku connecting
+            the world 🎵).</li>
+          <li><img src="images/icons/computer_explorer-0.png" width="12" height="12" class="inline-icon" alt="">
+            <strong>Cloud &amp; Virtualization:</strong> Tinkering with Docker containers, Proxmox VMs, and homelab
+            setups.</li>
+          <li><img src="images/icons/world-0.png" width="12" height="12" class="inline-icon" alt=""> <strong>Network
+              Tunnels:</strong> Tunneling <code>localhost</code> to the wild web using Cloudflare Tunnels &amp;
+            Tailscale. Big open-source fan!</li>
+          <li><img src="images/icons/script_file_blue-0.png" width="12" height="12" class="inline-icon" alt="">
+            <strong>Automation &amp; Scripts:</strong> Writing Python &amp; Bash tools so I don't have to do repetitive
+            tasks manually twice.</li>
+          <li><img src="images/icons/console_prompt-0.png" width="12" height="12" class="inline-icon" alt="">
+            <strong>Network Architecture:</strong> Genuinely fascinated by routing, packets, and watching nodes
+            handshake seamlessly.</li>
         </ul>
       </fieldset>
 
-      <fieldset style="margin-bottom: 8px;">
-        <legend><img src="https://win98icons.alexmeub.com/icons/png/msg_warning-0.png" width="12" height="12"
-            style="vertical-align: middle; margin-right: 4px;"> Kata-Kata Semangat (Pieces of Advice)</legend>
-        <ul style="font-size: 11px; line-height: 1.5; margin-left: 16px; font-style: italic;">
-          <li>Learn deeply, but don't trap yourself in endless preparation. Reality only rewards things that are tested.
-          </li>
+      <fieldset class="fieldset-spaced-bottom">
+        <legend><img src="images/icons/msg_warning-0.png" width="12" height="12" class="inline-icon" alt=""> Kata-Kata
+          Semangat (Pieces of Advice)</legend>
+        <ul class="readme-list advice">
+          <li>Learn deeply, but don't trap yourself in endless preparation. Reality only rewards things that are
+            tested.</li>
           <li>Use AI as a teacher, not as a replacement for thinking. Keep your own ability to troubleshoot.</li>
           <li>Everything has a cost. Every feature, tool, and decision has trade-offs.</li>
           <li>Learn networking, software, and infrastructure together. The strongest solutions connect different
             systems.</li>
           <li>Don't compare my timeline with others. Everyone has unique paths.</li>
-          <li>I am not trying to know everything. I am trying to become someone who can learn anything when needed.</li>
+          <li>I am not trying to know everything. I am trying to become someone who can learn anything when
+            needed.</li>
         </ul>
       </fieldset>
+
+      <p class="readme-contact">Want to talk infrastructure? <a
+          href="mailto:mirulqayyum@outlook.com">mirulqayyum@outlook.com</a></p>
     </div>
     <div class="status-bar">
       <p class="status-bar-field">Ln 1, Col 1</p>
@@ -444,29 +584,30 @@
     </div>
   </div>
 
-  <!-- ================= WINDOW: CHHA PROJECT PREVIEW ================= -->
-  <div id="window-chha" class="window" style="top: 465px; left: calc(100vw - 580px); width: 540px; z-index: 20;">
-    <div class="title-bar" onmousedown="focusWindow('window-chha')">
+  <!-- ================= WINDOW 8: CHHA PROJECT PREVIEW ================= -->
+  <div id="window-chha" class="window" style="top: 470px; left: 600px; width: 540px; z-index: 20;">
+    <div class="title-bar" data-focus>
       <div class="title-bar-text">
-        <img src="https://win98icons.alexmeub.com/icons/png/paint_file-2.png" alt="Chha Project" width="16" height="16"
-          style="vertical-align: middle; margin-right: 4px; margin-top: -2px;"><span>Chha_Project.bmp - Imaging
-          Preview</span>
+        <img src="images/icons/paint_file-2.png" alt="" width="16" height="16" class="title-icon">
+        <span>CHHA Project.bmp - Imaging Preview</span>
       </div>
       <div class="title-bar-controls">
-        <button aria-label="Minimize" onclick="minimizeWindow('window-chha')"></button>
+        <button aria-label="Minimize" data-minimize></button>
         <button aria-label="Maximize" disabled></button>
-        <button aria-label="Close" onclick="closeWindow('window-chha')"></button>
+        <button aria-label="Close" data-close></button>
       </div>
     </div>
-    <div class="window-body" style="padding: 6px;">
-      <div class="sunken-panel"
-        style="background: #808080; padding: 6px; text-align: center; overflow: auto; max-height: 380px;">
-        <img src="images/projectpic.png" alt="Chha Project Architecture"
-          style="max-width: 100%; height: auto; border: 1px solid #000; display: block; margin: 0 auto;">
+    <div class="window-body chha-body">
+      <div class="sunken-panel chha-panel">
+        <img src="images/projectpic.png" alt="CHHA schematic diagram" class="chha-image">
       </div>
-      <p style="font-size: 11px; margin-top: 6px; color: #333;"><strong>Centralized Hub Home Automation Schematic
-          Diagram</strong> -
-        1st Module preview</p>
+      <p class="chha-caption"><strong>Centralized Hub Home Automation &mdash; schematic diagram</strong> (1st module
+        preview).
+        Source: <a href="https://github.com/AtechPro/chha" target="_blank"
+          rel="noopener noreferrer">github.com/AtechPro/chha</a>
+      </p>
+      <p class="chha-caption">ESP8266/ESP32 nodes (KY-010 photoresistor, KY-019 relay, PIR sensor, MQ-2 gas sensor)
+        reporting over MQTT to the Raspberry Pi hub.</p>
     </div>
     <div class="status-bar">
       <p class="status-bar-field">Image: projectpic.png</p>
@@ -474,18 +615,71 @@
     </div>
   </div>
 
+  <!-- ================= WINDOW: DESKTOP CLOCK ================= -->
+  <div id="window-clock" class="window clock-window" style="top: 20px; left: calc(100vw - 210px); width: 178px; z-index: 11;">
+    <div class="title-bar" data-focus>
+      <div class="title-bar-text">
+        <img src="images/icons/clock.svg" alt="" width="16" height="16" class="title-icon">
+        <span>Clock.exe</span>
+      </div>
+      <div class="title-bar-controls">
+        <button aria-label="Minimize" data-minimize></button>
+        <button aria-label="Maximize" disabled></button>
+        <button aria-label="Close" data-close></button>
+      </div>
+    </div>
+    <div class="window-body">
+      <div class="clock-face">
+        <svg class="clock-svg" viewBox="0 0 100 100" aria-hidden="true">
+          <circle cx="50" cy="50" r="48" fill="#dfdfdf" stroke="#808080" stroke-width="1" />
+          <circle cx="50" cy="50" r="43" fill="#ffffff" stroke="#404040" stroke-width="0.75" />
+          <g stroke="#000000" stroke-width="1.8">
+            <line x1="50" y1="7" x2="50" y2="13" />
+            <line x1="50" y1="87" x2="50" y2="93" />
+            <line x1="7" y1="50" x2="13" y2="50" />
+            <line x1="87" y1="50" x2="93" y2="50" />
+          </g>
+          <g stroke="#404040" stroke-width="1">
+            <line x1="71.5" y1="11.9" x2="68.5" y2="17.1" />
+            <line x1="88.1" y1="28.3" x2="82.9" y2="31.3" />
+            <line x1="88.1" y1="71.7" x2="82.9" y2="68.7" />
+            <line x1="71.5" y1="88.1" x2="68.5" y2="82.9" />
+            <line x1="28.5" y1="88.1" x2="31.5" y2="82.9" />
+            <line x1="11.9" y1="71.7" x2="17.1" y2="68.7" />
+            <line x1="11.9" y1="28.3" x2="17.1" y2="31.3" />
+            <line x1="28.5" y1="11.9" x2="31.5" y2="17.1" />
+          </g>
+          <g fill="#000000" font-family="'Pixelated MS Sans Serif','MS Sans Serif',Tahoma,sans-serif" font-size="11"
+            text-anchor="middle" dominant-baseline="central">
+            <text x="50" y="21">12</text>
+            <text x="79" y="50">3</text>
+            <text x="50" y="79">6</text>
+            <text x="21" y="50">9</text>
+          </g>
+        </svg>
+        <div class="clock-hand hour" id="clock-hour"></div>
+        <div class="clock-hand minute" id="clock-minute"></div>
+        <div class="clock-hand second" id="clock-second"></div>
+        <div class="clock-pin"></div>
+      </div>
+      <div class="clock-digital" id="clock-digital">--:--:--</div>
+      <div class="clock-date" id="clock-date">&nbsp;</div>
+    </div>
+    <div class="status-bar">
+      <p class="status-bar-field">Local time</p>
+    </div>
+  </div>
+
   <!-- ================= TASKBAR & START MENU ================= -->
   <div id="taskbar">
-    <button id="start-button" onclick="toggleStartMenu()">
-      <img src="https://win98icons.alexmeub.com/icons/png/windows-0.png" alt="Start" width="16" height="16"
-        style="margin-right: 4px;">
+    <button id="start-button" aria-haspopup="true">
+      <img src="images/icons/windows-0.png" alt="" width="16" height="16">
       Start
     </button>
     <div id="taskbar-divider"></div>
     <div id="taskbar-items"></div>
     <div id="system-tray">
-      <img src="https://win98icons.alexmeub.com/icons/png/loudspeaker_rays-0.png" width="16" height="16" alt="Volume"
-        style="vertical-align: middle; margin-right: 4px; margin-top: -2px;">
+      <img src="images/icons/loudspeaker_rays-0.png" width="16" height="16" alt="Volume" class="tray-icon">
       <span id="clock">12:00 PM</span>
     </div>
   </div>
@@ -494,30 +688,28 @@
   <div id="start-menu">
     <div class="start-sidebar">Windows98</div>
     <div class="start-items">
-      <a class="start-item" onclick="openWindow('window-about'); toggleStartMenu();"><img
-          src="https://win98icons.alexmeub.com/icons/png/notepad_file-1.png" width="24" height="24"
-          style="margin-right: 8px; vertical-align: middle;">About Me</a>
-      <a class="start-item" onclick="openWindow('window-experience'); toggleStartMenu();"><img
-          src="https://win98icons.alexmeub.com/icons/png/console_prompt-0.png" width="24" height="24"
-          style="margin-right: 8px; vertical-align: middle;">Work Experience</a>
-      <a class="start-item" onclick="openWindow('window-skills'); toggleStartMenu();"><img
-          src="https://win98icons.alexmeub.com/icons/png/gears-0.png" width="24" height="24"
-          style="margin-right: 8px; vertical-align: middle;">Skills & Certs</a>
-      <a class="start-item" onclick="openWindow('window-projects'); toggleStartMenu();"><img
-          src="https://win98icons.alexmeub.com/icons/png/directory_closed-4.png" width="24" height="24"
-          style="margin-right: 8px; vertical-align: middle;">Portfolio Projects</a>
-      <a class="start-item" onclick="openWindow('window-readme'); toggleStartMenu();"><img
-          src="https://win98icons.alexmeub.com/icons/png/notepad-0.png" width="24" height="24"
-          style="margin-right: 8px; vertical-align: middle;">README.md</a>
-      <a class="start-item" onclick="openWindow('window-chha'); toggleStartMenu();"><img
-          src="https://win98icons.alexmeub.com/icons/png/paint_file-2.png" width="24" height="24"
-          style="margin-right: 8px; vertical-align: middle;">Chha Project</a>
+      <a class="start-item" data-open="window-about" data-menu-close><img src="images/icons/notepad_file-1.png"
+          width="24" height="24" alt="">About Me</a>
+      <a class="start-item" data-open="window-experience" data-menu-close><img src="images/icons/console_prompt-0.png"
+          width="24" height="24" alt="">Work Experience</a>
+      <a class="start-item" data-open="window-skills" data-menu-close><img src="images/icons/gears-0.png" width="24"
+          height="24" alt="">Skills &amp; Certs</a>
+      <a class="start-item" data-open="window-projects" data-menu-close><img src="images/icons/directory_closed-4.png"
+          width="24" height="24" alt="">Portfolio Projects</a>
+      <a class="start-item" data-open="window-cv" data-menu-close><img src="images/icons/notepad_file-0.png"
+          width="24" height="24" alt="">Download CV</a>
+      <a class="start-item" data-open="window-readme" data-menu-close><img src="images/icons/notepad-0.png" width="24"
+          height="24" alt="">README.md</a>
+      <a class="start-item" data-open="window-clock" data-menu-close><img src="images/icons/clock.svg" width="24"
+          height="24" alt="">Clock &amp; Date</a>
+      <a class="start-item" data-open="window-chha" data-menu-close><img src="images/icons/paint_file-2.png" width="24"
+          height="24" alt="">CHHA Project</a>
 
       <div class="start-divider"></div>
-      <a class="start-item"
-        onclick="alert('Windows 98 Simulation: Thank you for viewing Amirul Qayyum\'s resume!');"><img
-          src="https://win98icons.alexmeub.com/icons/png/shut_down_normal-0.png" width="24" height="24"
-          style="margin-right: 8px; vertical-align: middle;">Shut Down...</a>
+      <a class="start-item" data-reboot><img src="images/icons/settings_gear-0.png" width="24" height="24"
+          alt="">Restart...</a>
+      <a class="start-item" data-shutdown><img src="images/icons/shut_down_normal-0.png" width="24" height="24"
+          alt="">Shut Down...</a>
     </div>
   </div>
 
